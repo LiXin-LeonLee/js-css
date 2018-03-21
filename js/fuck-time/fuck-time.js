@@ -15,6 +15,7 @@
 // @match        *://www.ithome.com/*
 // @match        *://bbs.smartisan.com/*
 // @match        *://www.pornhub.com/*
+// @match        file:///E:/Web%20Server/f12.html
 
 // @grant        window.close
 // ==/UserScript==
@@ -84,6 +85,7 @@ function handThePorn(domain) {
 function handleTheOther(domain){
     // alert("others");
     showPromptWindow("无用网站","prompt","3");
+    createCountdownPane();
 }
 
 // 模态弹窗，包含：标题、警醒说明、各类操作类型（关闭、浏览3分钟、学习访问）
@@ -125,7 +127,7 @@ function createPromptWindow(header, words, typeOfHandler) {
             </div>
             <div class="fuck-time-button-pane">
                 <button onclick="clickCloseButton();">关闭</button>
-                <button onclick="clickTemporaryButton();">浏览 3 分钟</button>
+                <button onclick="clickTemporaryButton(3);">浏览 3 分钟</button>
                 <button onclick="clickLearningButton();">学习需要浏览</button>
             </div>
         </div>
@@ -174,6 +176,15 @@ function createStyleElement(typeOfHandler) {
         .hide {
             display: none;
         }
+        #fuckTimeCountdownPane {
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
+            height: 50px;
+            width: 100px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+        }
     `;
     return styleElement;
 }
@@ -184,16 +195,83 @@ function createScriptElement() {
     scriptElement.innerHTML = `
         // 按钮对应执行函数
         function clickCloseButton() {
-            document.body.innerHTML = '<p style="font-size:100px">block</p>';
+            document.body.innerHTML = '<div \style="font-size:100px; text-align:center">block</div>';
         }
-        function clickTemporaryButton() {
+
+        function clickTemporaryButton(min = 3) {
             // 显示倒计时
+            showTheCountdownPane(min);
+
+            // 关闭面板
+            hidePromptWindow();
+
+            // min 分钟后关闭
+            setTimeout(clickCloseButton, min*60000);
         }
+
         function clickLearningButton() {
             // 显示已用时长
         }
+
+        // 隐藏主面板
+        function hidePromptWindow() {
+            var promptWindowDOM = document.getElementById("fuckTimeModal");
+            promptWindowDOM.classList.add("hide");
+        }
+
+        // 显示倒计时面板，并初始化时间
+        function showTheCountdownPane(min) {
+            var countdownDOM, cdList, second;
+            countdownDOM = document.getElementById("fuckTimeCountdownPane");
+            countdownDOM.classList.remove("hide");
+            cdList = countdownDOM.children;
+            second = min * 60;
+
+            // 初始化时间，开始倒计时
+            setInterval(function() {
+                var formatTime = formatSeconds(second);
+                cdList[1].innerHTML = formatTime.day + "天 ";
+                cdList[2].innerHTML = formatTime.hour + ":";
+                cdList[3].innerHTML = formatTime.minute + ":";
+                cdList[4].innerHTML = formatTime.second;
+                second -= 1;
+            }, 1000);
+        }
+
+        // 将一个t秒级的转换为一个“x天x时x分x秒”格式
+        function formatSeconds(t) {
+            var day, d, hour, h, minute, m, second, s;
+            s = t;
+            second = s % 60;
+            m = Math.floor(s / 60);
+            minute = m % 60;
+            h = Math.floor(m / 60);
+            hour = h % 24;
+            d = Math.floor(h / 24);
+            day = d;
+            return {day: day, hour: hour, minute: minute, second: second};
+        }
     `;
     return scriptElement;
+}
+
+// 创建倒计时面板，开始时隐藏
+function createCountdownPane() {
+    var countdownDOM;
+
+    countdownDOM = document.createElement("div");
+    countdownDOM.id = "fuckTimeCountdownPane";
+    countdownDOM.className = "hide";
+
+    countdownDOM.innerHTML = `
+        <span>你还可以浏览: </span>
+        <span class="hide"></span>
+        <span class="hide"></span>
+        <span></span>
+        <span></span>
+    `;
+    console.log("createCountdownPane OK");
+    document.body.appendChild(countdownDOM);
 }
 
 // 执行入口
