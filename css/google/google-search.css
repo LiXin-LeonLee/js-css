@@ -1,0 +1,124 @@
+@-moz-document url-prefix("https://www.google.com/search") {
+/* --- 居中风格 --- */
+
+/* logo，搜索框 居中 */
+.srp #tsf {
+    margin: 0 auto;
+}
+
+/* 搜索类型导航 居中 */
+#hdtbSum {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* 搜索结果统计、工具栏 居中 */
+#appbar {
+    margin: 0 auto;
+    width: 800px;
+    min-width: 800px;
+}
+
+.hdtb-mn-cont {
+    margin: 0 auto;
+    width: 800px;
+}
+
+/* 搜索结果 居中 */
+.mw {
+    /*     margin: 0 auto; */
+    max-width: 9999px;
+}
+
+#rcnt {
+    padding-left: calc(calc(100% - 1400px) / 2);
+}
+
+#center_col {
+    margin: 0 !important;
+    width: 1400px !important;
+}
+
+/* 相关搜索 居中 */
+#brs h3.med,
+#brs .card-section {
+    text-align: center !important;
+}
+
+/* 翻页 居中 */
+#foot {
+    margin: 0 auto;
+}
+
+/* 底栏 居中 */
+.fbar,
+.fbar div,
+.fbar span {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    text-align: center;
+}
+}
+
+@-moz-document url-prefix("https://www.google.com/search") {
+/* --- 排列 --- */
+
+/* 搜索结果两列分布 */
+#res {
+    column-count: 2;
+}
+
+/* 避免分列后，分裂初的 block 被拆分 */
+.g {
+    display: inline-block;
+}
+
+/* 去掉原有的搜索结果面板的 margin-top，避免多列显示时，各列顶部不齐 */
+#ires {
+    margin-top: 0;
+}
+
+/* 相关搜索 每一个条目横向排列 */
+#brs .nVcaUb {
+    display: inline-block;
+}
+
+}
+
+@-moz-document url-prefix("https://www.google.com/search") {
+/* --- 样式部分 --- */
+
+/* 相关搜索、翻页板 样式 */
+#extrares,
+#foot {
+    padding: 1px 30px;
+    margin-bottom: 10px;
+}
+
+/* 搜索结果条目样式 */
+.g {
+    margin: 13px 0;
+    padding: 20px;
+    width: 600px;
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    border-radius: 8px;
+}
+
+/* 将“安全搜索”提示 与 统计结果 垂直对齐 */
+#ab_ctls {
+    padding-top: 0;
+    line-height: 43px;
+}
+
+/* 相关搜索条目 样式 */
+#brs .nVcaUb {
+    margin-right: 10px;
+    background-color: #f7f7f7;
+}
+
+#brs a {
+    padding: 3px 16px;
+}
+}
