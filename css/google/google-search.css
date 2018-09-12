@@ -99,6 +99,7 @@
 /* 搜索结果条目样式 */
 /* 呈现卡片化效果 */
 .g {
+    position: relative;
     margin: 13px 0;
     padding: 20px;
     width: 600px;
@@ -112,6 +113,21 @@
     padding-bottom: 5px;
     margin-bottom: 15px;
     border-bottom: 1px solid #DFE1E5;
+}
+
+/* 为搜索结果添加序号 */
+#res {
+    counter-reset: gnumber;
+}
+
+.g::before {
+    counter-increment: gnumber;
+    content: counter(gnumber);
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: #eee;
+    font-size: 2.5em;
 }
 
 /* 将“安全搜索”提示 与 统计结果 垂直对齐 */
