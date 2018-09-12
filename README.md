@@ -10,3 +10,5 @@ JS for Tampermonkey、CSS for Stylish
 - [x] 卡片化风格
 
 - [ ] 响应式布局
+
+- [ ] 优化人物、电影类搜索结果页面
