@@ -97,6 +97,7 @@
 }
 
 /* 搜索结果条目样式 */
+/* 呈现卡片化效果 */
 .g {
     margin: 13px 0;
     padding: 20px;
@@ -104,6 +105,13 @@
     background-color: #fff;
     box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
     border-radius: 8px;
+}
+
+/* 添加分割线 */
+.g .rc .s div.f {
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #DFE1E5;
 }
 
 /* 将“安全搜索”提示 与 统计结果 垂直对齐 */
