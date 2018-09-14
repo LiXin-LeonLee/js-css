@@ -70,7 +70,7 @@
 }
 
 /* 避免分列后，分裂初的 block 被拆分 */
-.srg .g {
+.bkWMgd .g {
     display: inline-block;
 }
 
@@ -102,7 +102,7 @@
 
 /* 搜索结果条目样式 */
 /* 呈现卡片化效果 */
-.srg .g {
+.bkWMgd .g {
     position: relative;
     margin: 13px 0;
     padding: 20px;
@@ -124,7 +124,7 @@
     counter-reset: gnumber;
 }
 
-.srg .g::before {
+.bkWMgd .g::before {
     counter-increment: gnumber;
     content: counter(gnumber);
     position: absolute;
@@ -173,6 +173,7 @@
 .mw #rhs {
     margin-left: 0;
 }
+
 
 /* 视频栏 */
 .bkWMgd g-section-with-header {
