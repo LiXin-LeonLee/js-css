@@ -70,7 +70,7 @@
 }
 
 /* 避免分列后，分裂初的 block 被拆分 */
-.g {
+.srg .g {
     display: inline-block;
 }
 
@@ -82,6 +82,10 @@
 /* 相关搜索 每一个条目横向排列 */
 #brs .nVcaUb {
     display: inline-block;
+}
+
+#footcnt {
+    z-index: -1;
 }
 
 }
@@ -98,7 +102,7 @@
 
 /* 搜索结果条目样式 */
 /* 呈现卡片化效果 */
-.g {
+.srg .g {
     position: relative;
     margin: 13px 0;
     padding: 20px;
@@ -120,7 +124,7 @@
     counter-reset: gnumber;
 }
 
-.g::before {
+.srg .g::before {
     counter-increment: gnumber;
     content: counter(gnumber);
     position: absolute;
@@ -144,5 +148,35 @@
 
 #brs a {
     padding: 3px 16px;
+}
+}
+
+@-moz-document url-prefix("https://www.google.com/search") {
+/* 特殊内容展示处理 */
+
+/* 右侧聚合内容的显示 */
+#rhscol {
+    position: absolute;
+    right: -630px;
+    min-width: 600px;
+    background-color: #fff;
+    padding-left: 50px;
+    padding-top: 50px;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    border-radius: 8px;
+}
+
+#rhscol:hover {
+    right: -100px;
+}
+
+.mw #rhs {
+    margin-left: 0;
+}
+
+/* 视频栏 */
+.bkWMgd g-section-with-header {
+    width: 600px;
+    margin-left: 20px;
 }
 }
