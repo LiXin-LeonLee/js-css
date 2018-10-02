@@ -15,6 +15,7 @@
 // @match        *://www.ithome.com/*
 // @match        *://bbs.smartisan.com/*
 // @match        *://www.pornhub.com/*
+// @match        *://pan.baidu.com/play/video*
 // @match        file:///E:/Web%20Server/f12.html
 
 // @grant        window.close
@@ -28,10 +29,10 @@ var inline_src = (<><![CDATA[
 
     // Your code here...
 
+
 // 获取域名
 function getDomain() {
     var domain;
-
     domain = location.hostname; // 获取主机域名
     return domain;
 }
@@ -40,8 +41,9 @@ function getDomain() {
 function getClassOfDomain(domain) {
     var domainClassList, domainClass;
     domainClassList = {
-        useless: ["sports.qq.com", "nba.stats.qq.com"],
-        porn: ["www.pornhub.com"]
+        useless: ["sports.qq.com", "nba.stats.qq.com", 'www.ithome.com', 'www.smartisan.com', 'bbs.smartisan.com'],
+        porn: ["www.pornhub.com"],
+        vedio: ["pan.baidu.com"]
     };
     // 遍历操作，如果不存在则标记为 others
     // domainClass = "useless"; // test
@@ -58,6 +60,7 @@ function chooseToDo() {
     var domain, domainClass;
     domain = getDomain();
     domainClass = getClassOfDomain(domain);
+    console.log(domainClass);
 
     // 根据类别执行对应操作
     switch (domainClass) {
@@ -65,7 +68,10 @@ function chooseToDo() {
             handleTheUseless(domain);
             break;
         case "porn":
-            handThePorn(domain);
+            handleThePorn(domain);
+            break;
+        case 'vedio':
+            handleTheVedio(domain);
             break;
         default:
             handleTheOther(domain);
@@ -75,12 +81,20 @@ function chooseToDo() {
 
 // 具体操作
 function handleTheUseless(domain) {
-    alert("小子，你正在看的" + domain + "是无用网站");
+    // alert("小子，你正在看的" + domain + "是无用网站");
+
+    // 直接关闭
+    document.body.innerHTML = '<div style="font-size:100px; text-align:center">block</div>';
 }
 
-function handThePorn(domain) {
+function handleThePorn(domain) {
     alert("小子，你正在看的" + domain + "是色情网站");
 }
+
+const handleTheVedio = (domain) => {
+    showPromptWindow('视频网站', '小子最多看 20 分钟', '20');
+    createCountdownPane();
+};
 
 function handleTheOther(domain){
     // alert("others");
@@ -126,8 +140,8 @@ function createPromptWindow(header, words, typeOfHandler) {
                 <p>` + words + `</p>
             </div>
             <div class="fuck-time-button-pane">
-                <button onclick="clickCloseButton();">关闭</button>
-                <button onclick="clickTemporaryButton(3);">浏览 3 分钟</button>
+                <button type="primary" onclick="clickCloseButton();">关闭</button>
+                <button onclick="clickTemporaryButton(${Number(typeOfHandler)});">浏览 ${typeOfHandler} 分钟</button>
                 <button onclick="clickLearningButton();">学习需要浏览</button>
             </div>
         </div>
@@ -151,7 +165,9 @@ function createStyleElement(typeOfHandler) {
         .fuck-time-pane {
             height: 400px;
             width: 600px;
+            padding: 15px;            
             background-color: #f7f7f7;
+            text-align: center;
         }
         .fuck-time-header-pane {
 
@@ -180,8 +196,8 @@ function createStyleElement(typeOfHandler) {
             position: fixed;
             bottom: 10px;
             right: 20px;
-            height: 50px;
-            width: 100px;
+            height: 30px;
+            width: 120px;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 10000;
         }
