@@ -14,3 +14,5 @@ JS for Tampermonkey、CSS for Stylish
 - [ ] 响应式布局
 
 - [ ] 优化人物、电影类搜索结果页面
+
+- [ ] Bug: 聚类媒体条造成 width 过大或者变化的问题
