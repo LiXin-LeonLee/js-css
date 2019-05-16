@@ -1,183 +1,205 @@
 @-moz-document url-prefix("https://www.google.com/search") {
 /* --- 居中风格 --- */
-
 /* logo，搜索框 居中 */
 .srp #tsf {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 /* 搜索类型导航 居中 */
 #hdtbSum {
-    margin: 0 auto;
-    max-width: 800px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 /* 搜索结果统计、工具栏 居中 */
 #appbar {
-    margin: 0 auto;
-    width: 800px;
-    min-width: 800px;
+  margin: 0 auto;
+  width: 800px;
+  min-width: 800px;
 }
 
 .hdtb-mn-cont {
-    margin: 0 auto;
-    width: 800px;
+  margin: 0 auto;
+  width: 800px;
+}
+
+.hdtbU.hdtb-mn-o {
+  position: relative;
+  top: 0 !important;
+  width: 156px;
 }
 
 /* 搜索结果 居中 */
 .mw {
-    /*     margin: 0 auto; */
-    max-width: 9999px;
+  /*     margin: 0 auto; */
+  max-width: 9999px;
 }
 
 #rcnt {
-    padding-left: calc(calc(100% - 1400px) / 2);
+  padding-left: calc(calc(100% - 1400px) / 2);
 }
 
 #center_col {
-    margin: 0 !important;
-    width: 1400px !important;
+  margin: 0 !important;
+  width: 1400px !important;
 }
 
 /* 相关搜索 居中 */
 #brs h3.med,
 #brs .card-section {
-    text-align: center !important;
+  text-align: center !important;
 }
 
 /* 翻页 居中 */
 #foot {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 /* 底栏 居中 */
 .fbar,
 .fbar div,
 .fbar span {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-    text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  text-align: center;
 }
 }
 
 @-moz-document url-prefix("https://www.google.com/search") {
 /* --- 排列 --- */
-
 /* 搜索结果两列分布 */
 #res {
-    column-count: 2;
+  column-count: 2;
 }
 
 /* 避免分列后，分裂初的 block 被拆分 */
 .bkWMgd .g {
-    display: inline-block;
+  display: inline-block;
 }
 
 /* 去掉原有的搜索结果面板的 margin-top，避免多列显示时，各列顶部不齐 */
 #ires {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 /* 相关搜索 每一个条目横向排列 */
 #brs .nVcaUb {
-    display: inline-block;
+  display: inline-block;
 }
 
 #footcnt {
-    z-index: -1;
+  z-index: -1;
 }
-
 }
 
 @-moz-document url-prefix("https://www.google.com/search") {
 /* --- 样式部分 --- */
-
 /* 相关搜索、翻页板 样式 */
 #extrares,
 #foot {
-    padding: 1px 30px;
-    margin-bottom: 10px;
+  padding: 1px 30px;
+  margin-bottom: 10px;
 }
 
 /* 搜索结果条目样式 */
 /* 呈现卡片化效果 */
 .bkWMgd .g {
-    position: relative;
-    margin: 13px 0;
-    padding: 20px;
-    width: 600px;
-    background-color: #fff;
-    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-    border-radius: 8px;
+  position: relative;
+  margin: 13px 0;
+  padding: 20px;
+  width: 600px;
+  background-color: #fff;
+  border: 1px solid #dfe1e5;
+  border-radius: 10px;
+}
+
+.bkWMgd .g:hover {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0)
 }
 
 /* 添加分割线 */
 .g .rc .s div.f {
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #DFE1E5;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #DFE1E5;
 }
 
 /* 为搜索结果添加序号 */
 #res {
-    counter-reset: gnumber;
+  counter-reset: gnumber;
 }
 
 .bkWMgd .g::before {
-    counter-increment: gnumber;
-    content: counter(gnumber);
-    position: absolute;
-    right: 10px;
-    top: 5px;
-    color: #eee;
-    font-size: 2.5em;
+  counter-increment: gnumber;
+  content: counter(gnumber);
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: #eee;
+  font-size: 2.5em;
 }
 
 /* 将“安全搜索”提示 与 统计结果 垂直对齐 */
 #ab_ctls {
-    padding-top: 0;
-    line-height: 43px;
+  padding-top: 0;
+  line-height: 43px;
 }
 
 /* 相关搜索条目 样式 */
 #brs .nVcaUb {
-    margin-right: 10px;
-    background-color: #f7f7f7;
+  margin-right: 10px;
+  background-color: #f7f7f7;
 }
 
 #brs a {
-    padding: 3px 16px;
+  padding: 3px 16px;
 }
 }
 
 @-moz-document url-prefix("https://www.google.com/search") {
 /* 特殊内容展示处理 */
-
-/* 右侧聚合内容的显示 */
+/* 右侧多媒体聚合内容的显示 */
 #rhscol {
-    position: absolute;
-    right: -630px;
-    min-width: 600px;
-    background-color: #fff;
-    padding-left: 50px;
-    padding-top: 50px;
-    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-    border-radius: 8px;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border-radius: 14px;
+  right: 20px;
+  overflow: auto;
+}
+
+/* 去除默认样式影响 */
+.mw #rhs {
+  margin-left: 0;
+}
+
+/* 动态显示 */
+#rhscol {
+  height: 28px;
+  min-width: 28px;
+  transition: 0.3s;
 }
 
 #rhscol:hover {
-    right: -100px;
+  height: auto;
+  padding-left: 20px;
+  padding-top: 40px;
+  min-width: 480px
 }
 
-.mw #rhs {
-    margin-left: 0;
+#rhs {
+  display: none;
 }
 
+#rhscol:hover > #rhs {
+  display: block;
+}
 
 /* 视频栏 */
 .bkWMgd g-section-with-header {
-    width: 600px;
-    margin-left: 20px;
+  width: 592px;
+  margin-left: 20px;
 }
 }
