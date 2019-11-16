@@ -114,6 +114,11 @@
   left: 17px!important;
 }
 
+/* Videos 聚合卡片播放按钮可以被隐形点击，找不到解决方案，只好先隐藏 */
+g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[jsname] {
+  display: none;
+}
+
 /* -------------- extrares --------------- */
 /* 与搜索结果同宽 */
 #extrares {
