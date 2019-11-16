@@ -87,8 +87,10 @@
   border-color: rgba(223, 225, 229, 0)
 }
 
+/* 去掉复合条目的内部边框 */
 #rso .g.obcontainer .vk_c,
-#rso .g.g-blk .kp-blk {
+#rso .g.g-blk .kp-blk,
+#rso .srg .g .exp-outline {
   border: none;
 }
 
@@ -205,11 +207,11 @@
   position: absolute;
   background-color: #fff;
   border: 1px solid #dfe1e5;
-  ;
   border-radius: 14px;
   top: 0;
   right: -20px;
   overflow: auto;
+  z-index: 30;
 }
 
 /* 去除默认样式影响 */
