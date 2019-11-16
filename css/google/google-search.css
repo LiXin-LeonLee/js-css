@@ -23,16 +23,35 @@
   margin: 0 auto;
 }
 
+/* -------------- 搜素结果 ------------- */
+/* 排列：搜索结果两列分布 */
+#res {
+  column-count: 2;
+  column-gap: 0;
+}
+
+/* 避免分列后，分裂初的 block 被拆分 */
+#rso .srg .g,
+#rso div g-section-with-header,
+#rso > div > .g,
+#rso .g.obcontainer,
+#rso .g.g-blk {
+  display: inline-block;
+}
+
+/* 去掉原有的，同类型的搜索结果面板的 margin-top，避免多列显示时，各列顶部不齐 */
+#rso {
+  margin-top: 0;
+}
 
 /* 各个搜索结果在父元素中居中 */
-#search div g-section-with-header,
-#search .g {
+#rso .srg .g,
+#rso div g-section-with-header,
+#rso > div > .g,
+#rso .g.obcontainer,
+#rso .g.g-blk {
   position: relative;
   margin-left: calc(50% - 300px);
-  margin-top: 5px;
-  padding: 20px;
-  width: 558px;
-  overflow: auto;
 }
 
 #center_col,
@@ -42,7 +61,58 @@
   width: 1280px !important;
 }
 
-/* extrares */
+/* 搜索结果条目样式 */
+/* 呈现卡片化效果 */
+#rso .srg .g,
+#rso div g-section-with-header,
+#rso > div > .g,
+#rso .g.obcontainer,
+#rso .g.g-blk {
+  margin-top: 5px;
+  padding: 20px;
+  width: 558px;
+  background-color: #fff;
+  border: 1px solid #dfe1e5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* 样式：悬浮效果 */
+#rso .srg .g:hover,
+#rso div g-section-with-header:hover,
+#rso > div > .g:hover,
+#rso .g.obcontainer:hover,
+#rso .g.g-blk:hover {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0)
+}
+
+#rso .g.obcontainer .vk_c,
+#rso .g.g-blk .kp-blk {
+  border: none;
+}
+
+/* 搜索结果在链接和文本间添加分割线 */
+#search .g .rc .r {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #DFE1E5;
+}
+
+/* 解决 Images for KEYWORD 图片溢出问题*/
+.birrg .ivg-i,
+.birrg g-inner-card,
+.birrg g-inner-card img,
+.birrg g-more-button > g-fab {
+  position: static;
+}
+/* 不选用非单词的 class 选择器，优先级不够只能强制 */
+.birrg g-more-button > g-fab > span {
+  position: relative!important;
+  top: 17px!important;
+  left: 17px!important;
+}
+
+/* -------------- extrares --------------- */
 /* 与搜索结果同宽 */
 #extrares {
   padding: 20px 0 0 0;
@@ -50,12 +120,14 @@
   width: 1280px !important;
   border-top: 2px solid #f7f7f7;
 }
+
 /* 分列 */
 #extrares {
   column-count: 2;
   column-gap: 0;
 }
 
+/* 与搜索结果以一样的条目样式 */
 #bres .g,
 #brs {
   margin-left: calc(50% - 300px);
@@ -77,10 +149,6 @@
   overflow: hidden;
 }
 
-/* #brs h3.med,
-#brs .card-section {
-  text-align: center !important;
-} */
 /* 搜索结果底下 相关搜索条目：样式、横向排列 */
 #brs .brs_col p {
   display: inline-block;
@@ -91,6 +159,8 @@
 #brs a {
   padding: 3px 16px;
 }
+
+
 /* ------------------------------ */
 /* 翻页 居中 */
 #foot {
@@ -106,82 +176,37 @@
   padding: 0;
   text-align: center;
 }
-
-
-/* --- 排列 --- */
-/* 搜索结果两列分布 */
-#res {
-  column-count: 2;
-  column-gap: 0;
 }
 
-/* 避免分列后，分裂初的 block 被拆分 */
-#search div g-section-with-header,
-#search .g {
-  display: inline-block;
-}
-
-/* 去掉原有的，同类型的搜索结果面板的 margin-top，避免多列显示时，各列顶部不齐 */
-#rso {
-  margin-top: 0;
-}
-
-
-/* --- 样式部分 --- */
-/* 相关搜索、翻页板 样式 */
-/* #extrares,
-#foot {
-  padding: 1px 30px;
-  margin-bottom: 10px;
-}
- */
-/* 搜索结果条目样式 */
-/* 呈现卡片化效果 */
-#search div g-section-with-header,
-#search .g {
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #dfe1e5;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-#search .g:hover {
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-  border-color: rgba(223, 225, 229, 0)
-}
-
-/* 搜索结果在链接和文本间添加分割线 */
-#search .g .rc .r {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #DFE1E5;
-}
-
+@-moz-document url-prefix("https://www.google.com/search") {
 /* 为搜索结果添加序号 */
 #res {
   counter-reset: gnumber;
 }
 
-#search .g::before {
+#rso .srg .g::before,
+#rso div g-section-with-header::before,
+#rso > div > .g::before,
+#rso .g.obcontainer::before,
+#rso .g.g-blk::before {
   counter-increment: gnumber;
   content: counter(gnumber);
   position: absolute;
-  right: 10px;
-  top: 5px;
+  right: 4px;
+  top: 2px;
   color: #eee;
-  font-size: 2.5em;
-}
+  font-size: 1.4em;
 }
 
-@-moz-document url-prefix("https://www.google.com/search") {
 /* ------------------------------ */
 /* 特殊内容展示处理 */
 /* 右侧多媒体聚合内容的显示 */
 #rhs {
   position: absolute;
   background-color: #fff;
-  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-  border-radius: 14px 0 0 14px;
+  border: 1px solid #dfe1e5;
+  ;
+  border-radius: 14px;
   top: 0;
   right: -20px;
   overflow: auto;
@@ -201,10 +226,15 @@
 }
 
 #rhs:hover {
+  border-radius: 2px;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+#rhs:hover {
   height: 600px;
   padding-left: 20px;
-  padding-top: 40px;
-  min-width: 480px
+  padding-top: 20px;
+  min-width: 480px;
 }
 
 #rhs > div {
