@@ -49,7 +49,8 @@
 #rso div g-section-with-header,
 #rso > div > .g,
 #rso .g.obcontainer,
-#rso .g.g-blk {
+#rso .g.g-blk,
+#rso div table {
   position: relative;
   margin-left: calc(50% - 300px);
 }
@@ -67,7 +68,8 @@
 #rso div g-section-with-header,
 #rso > div > .g,
 #rso .g.obcontainer,
-#rso .g.g-blk {
+#rso .g.g-blk,
+#rso div table {
   margin-top: 5px;
   padding: 20px;
   width: 558px;
@@ -82,15 +84,22 @@
 #rso div g-section-with-header:hover,
 #rso > div > .g:hover,
 #rso .g.obcontainer:hover,
-#rso .g.g-blk:hover {
+#rso .g.g-blk:hover,
+#rso div table:hover {
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   border-color: rgba(223, 225, 229, 0)
+}
+
+/* 谷歌学术的复合条目 */
+#rso div table {
+  margin-top: 0;
+  display: block;
 }
 
 /* 去掉复合条目的内部边框 */
 #rso .g.obcontainer .vk_c,
 #rso .g.g-blk .kp-blk,
-#rso .srg .g .exp-outline {
+#rso .g .exp-outline {
   border: none;
 }
 
@@ -195,7 +204,8 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
 #rso div g-section-with-header::before,
 #rso > div > .g::before,
 #rso .g.obcontainer::before,
-#rso .g.g-blk::before {
+#rso .g.g-blk::before,
+#rso div table::before {
   counter-increment: gnumber;
   content: counter(gnumber);
   position: absolute;
