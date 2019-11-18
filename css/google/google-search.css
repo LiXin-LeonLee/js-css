@@ -50,7 +50,7 @@
 #rso > div > .g,
 #rso .g.obcontainer,
 #rso .g.g-blk,
-#rso div table {
+div.QV1uNc.qlMaed {
   position: relative;
   margin-left: calc(50% - 300px);
 }
@@ -69,7 +69,7 @@
 #rso > div > .g,
 #rso .g.obcontainer,
 #rso .g.g-blk,
-#rso div table {
+div.QV1uNc.qlMaed {
   margin-top: 5px;
   padding: 20px;
   width: 558px;
@@ -85,15 +85,14 @@
 #rso > div > .g:hover,
 #rso .g.obcontainer:hover,
 #rso .g.g-blk:hover,
-#rso div table:hover {
+div.QV1uNc.qlMaed:hover {
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   border-color: rgba(223, 225, 229, 0)
 }
 
-/* 谷歌学术的复合条目 */
-#rso div table {
-  margin-top: 0;
-  display: block;
+/* 谷歌学术复合条目临时解决用打包混淆后的类名：div.QV1uNc.qlMaed */
+div.QV1uNc.qlMaed {
+  margin-bottom: 27px;
 }
 
 /* 去掉复合条目的内部边框 */
@@ -116,6 +115,7 @@
 .birrg g-more-button > g-fab {
   position: static;
 }
+
 /* 不选用非单词的 class 选择器，优先级不够只能强制 */
 .birrg g-more-button > g-fab > span {
   position: relative!important;
@@ -192,9 +192,8 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
   padding: 0;
   text-align: center;
 }
-}
 
-@-moz-document url-prefix("https://www.google.com/search") {
+/* ------------- 特殊内容展示处理 --------------- */
 /* 为搜索结果添加序号 */
 #res {
   counter-reset: gnumber;
@@ -205,7 +204,7 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
 #rso > div > .g::before,
 #rso .g.obcontainer::before,
 #rso .g.g-blk::before,
-#rso div table::before {
+div.QV1uNc.qlMaed::before {
   counter-increment: gnumber;
   content: counter(gnumber);
   position: absolute;
@@ -215,8 +214,6 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
   font-size: 1.4em;
 }
 
-/* ------------------------------ */
-/* 特殊内容展示处理 */
 /* 右侧多媒体聚合内容的显示 */
 #rhs {
   position: absolute;
