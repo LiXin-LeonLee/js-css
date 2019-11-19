@@ -35,7 +35,8 @@
 #rso div g-section-with-header,
 #rso > div > .g,
 #rso .g.obcontainer,
-#rso .g.g-blk {
+#rso .g.g-blk,
+#rso .vk_c {
   display: inline-block;
 }
 
@@ -50,6 +51,7 @@
 #rso > div > .g,
 #rso .g.obcontainer,
 #rso .g.g-blk,
+#rso .vk_c,
 div.QV1uNc.qlMaed {
   position: relative;
   margin-left: calc(50% - 300px);
@@ -69,6 +71,7 @@ div.QV1uNc.qlMaed {
 #rso > div > .g,
 #rso .g.obcontainer,
 #rso .g.g-blk,
+#rso .vk_c,
 div.QV1uNc.qlMaed {
   margin-top: 5px;
   margin-bottom: 10px;
@@ -86,6 +89,7 @@ div.QV1uNc.qlMaed {
 #rso > div > .g:hover,
 #rso .g.obcontainer:hover,
 #rso .g.g-blk:hover,
+#rso .vk_c:hover,
 div.QV1uNc.qlMaed:hover {
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   border-color: rgba(223, 225, 229, 0)
@@ -98,15 +102,9 @@ div.QV1uNc.qlMaed {
 
 /* 去掉复合条目的内部边框 */
 #rso .g.obcontainer .vk_c,
-#rso .g.g-blk .kp-blk,
+#rso .g .kp-blk,
 #rso .g .exp-outline {
   border: none;
-}
-
-/* 搜索结果在链接和文本间添加分割线 */
-#search .g .rc .r {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #DFE1E5;
 }
 
 /* 解决 Images for KEYWORD 图片溢出问题*/
@@ -220,6 +218,7 @@ div.QV1uNc.qlMaed::before {
   position: absolute;
   top: 5px;
   right: -20px;
+  min-width: 0;
   z-index: 30;
   transition: 0.3s;
 }
