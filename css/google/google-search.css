@@ -71,6 +71,7 @@ div.QV1uNc.qlMaed {
 #rso .g.g-blk,
 div.QV1uNc.qlMaed {
   margin-top: 5px;
+  margin-bottom: 10px;
   padding: 20px;
   width: 558px;
   background-color: #fff;
@@ -131,7 +132,7 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
 /* -------------- extrares --------------- */
 /* 与搜索结果同宽 */
 #extrares {
-  padding: 20px 0 0 0;
+  padding: 0;
   margin: 0 !important;
   width: 1280px !important;
   border-top: 2px solid #f7f7f7;
@@ -258,5 +259,45 @@ div.QV1uNc.qlMaed::before {
 
 #rhs:hover > div {
   display: block;
+}
+
+/* 翻页按钮 */
+#pnnext > span:nth-child(2),
+#pnprev > span:nth-child(2) {
+  position: fixed;
+  top: calc(50% - 30px);
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  color: #aaa;
+  border-radius: 30px;
+  opacity: 0.15;
+  transition: 0.3s;
+  font-size: 0;
+}
+
+#pnnext > span:nth-child(2) {
+  right: 10px;
+}
+
+#pnnext > span:nth-child(2)::after {
+  content: ">";
+  font-size: 36px;
+}
+
+#pnprev > span:nth-child(2) {
+  left: 10px;
+}
+
+#pnprev > span:nth-child(2)::before {
+  content: "<";
+  font-size: 36px;
+}
+
+#pnnext > span:nth-child(2):hover,
+#pnprev > span:nth-child(2):hover {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  opacity: 1;
 }
 }
