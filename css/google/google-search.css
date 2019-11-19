@@ -217,44 +217,44 @@ div.QV1uNc.qlMaed::before {
 /* 右侧多媒体聚合内容的显示 */
 #rhs {
   position: absolute;
-  background-color: #fff;
-  border: 1px solid #dfe1e5;
-  border-radius: 14px;
-  top: 0;
+  top: 5px;
   right: -20px;
-  overflow: auto;
   z-index: 30;
-}
-
-/* 去除默认样式影响 */
-#rhs {
-  margin-left: 0;
-}
-
-/* 动态显示 */
-#rhs {
-  height: 28px;
-  min-width: 28px;
-  padding-bottom: 0;
   transition: 0.3s;
 }
 
+/* hover 显示后效果 */
 #rhs:hover {
-  border-radius: 2px;
-  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-}
-
-#rhs:hover {
-  height: 600px;
   padding-left: 20px;
   padding-top: 20px;
+  background-color: #fff;
+  max-height: 600px;
   min-width: 480px;
+  border-radius: 14px 2px 2px 14px;
+  box-shadow: 0 0 8px rgba(32, 33, 36, 0.4);
+  overflow: auto;
 }
 
-#rhs > div {
+/* 有内容时则 h1 存在，会显现 */
+#rhs > h1 {
+  position: absolute;
+  clip: auto;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #dfe1e5;
+  border-radius: 14px;
+  background-color: #fff;
+  color: #fff;
+}
+
+/* 动态显示 */
+#rhs > div,
+#rhs:hover > h1 {
   display: none;
 }
-
 
 #rhs:hover > div {
   display: block;
