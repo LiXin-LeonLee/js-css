@@ -1,4 +1,4 @@
-@-moz-document url-prefix("https://www.google.com/search") {
+@-moz-document regexp("^https:\\/\\/www\\.google\\.com\\/search\\?(.(?<!\\&tbm))*$") {
 /* --- 居中风格 --- */
 /* logo，搜索框 居中 */
 .srp #tsf {
