@@ -144,6 +144,7 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
 
 /* 与搜索结果以一样的条目样式 */
 #bres .g,
+#bres .mnr-c,
 #brs {
   margin-left: calc(50% - 300px);
   margin-bottom: 0;
@@ -154,6 +155,7 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
 }
 
 /* 相关搜索：样式 */
+#bres .mnr-c,
 #brs {
   width: 558px;
   margin-top: 20px;
@@ -162,6 +164,12 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
   border: 1px solid #dfe1e5;
   border-radius: 10px;
   overflow: hidden;
+}
+
+/* 相关人物显示调整 */
+#bres .g-blk .kp-blk {
+  margin: -20px 0 -20px -20px;
+  border: 0;
 }
 
 /* 搜索结果底下 相关搜索条目：样式、横向排列 */
@@ -269,7 +277,7 @@ div.QV1uNc.qlMaed::before {
   width: 60px;
   text-align: center;
   line-height: 60px;
-  color: #aaa;
+  color: #525252;
   border-radius: 30px;
   opacity: 0.15;
   transition: 0.3s;
@@ -282,7 +290,7 @@ div.QV1uNc.qlMaed::before {
 
 #pnnext > span:nth-child(2)::after {
   content: ">";
-  font-size: 36px;
+  font-size: 30px;
 }
 
 #pnprev > span:nth-child(2) {
@@ -291,7 +299,7 @@ div.QV1uNc.qlMaed::before {
 
 #pnprev > span:nth-child(2)::before {
   content: "<";
-  font-size: 36px;
+  font-size: 30px;
 }
 
 #pnnext > span:nth-child(2):hover,
