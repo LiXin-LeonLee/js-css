@@ -2,21 +2,35 @@
 /* --- 居中风格 --- */
 /* logo，搜索框 居中 */
 .srp #tsf {
+  width: 782px;
   margin: 0 auto;
-}
-
-#tsf div[jscontroller] {
-  margin-left: auto;
 }
 
 /* 搜索类型导航 居中 */
-/* #hdtb #hdtbSum,
-#hdtb #htdbMenus {
-  width: 800px;
-  min-width: 800px;
+#hdtb-s #hdtb-msb {
+  float: none;
   margin: 0 auto;
-  margin-left: calc(50% - 550px);
-} */
+  width: 782px;
+}
+
+#hdtb-s #hdtb-msb > div {
+  display: inline-block;
+}
+
+/* Tools 选择 */
+#hdtbMenus .hdtb-mn-cont {
+  position: relative;
+  margin: 0 auto;
+  width: 782px;
+}
+
+/* 结果统计 */
+#appbar {
+  margin: 0 auto;
+  width: 782px;
+  min-width:782px;
+}
+
 /* 搜索结果统计 居中 */
 /* 搜索结果 居中 */
 .mw {
