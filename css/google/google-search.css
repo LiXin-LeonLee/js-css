@@ -124,8 +124,7 @@ div.QV1uNc.qlMaed {
 /* 解决 Images for KEYWORD 图片溢出问题*/
 .birrg .ivg-i,
 .birrg g-inner-card,
-.birrg g-inner-card img,
-.birrg g-more-button > g-fab {
+.birrg g-inner-card img {
   position: static;
 }
 
@@ -134,6 +133,11 @@ div.QV1uNc.qlMaed {
   position: relative!important;
   top: 17px!important;
   left: 17px!important;
+}
+
+/* Videos 缩进 */
+#rso g-section-with-header g-scrolling-carousel {
+  margin: 0;
 }
 
 /* Videos 聚合卡片播放按钮可以被隐形点击，找不到解决方案，只好先隐藏 */
