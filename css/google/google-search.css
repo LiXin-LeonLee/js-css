@@ -123,6 +123,11 @@ div.QV1uNc.qlMaed:hover {
   width: 558px;
 }
 
+/* 搜索结果首个复合站内导航的结果，比如 ffmpeg */
+#rso .g .nrgt .mslg .vsc {
+  width: 265px;
+}
+
 /* 谷歌学术复合条目临时解决用打包混淆后的类名：div.QV1uNc.qlMaed */
 div.QV1uNc.qlMaed {
   margin-bottom: 27px;
