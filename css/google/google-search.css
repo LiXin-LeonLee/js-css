@@ -51,7 +51,9 @@
 #rso .g.obcontainer,
 #rso .g.g-blk,
 #rso .vk_c,
-#rso > .g {
+#rso > .g,
+#rso > div > .xpd,
+#rso .std {
   display: inline-block;
 }
 
@@ -68,7 +70,8 @@
 #rso .g.g-blk,
 #rso .vk_c,
 #rso > .g,
-div.QV1uNc.qlMaed {
+#rso > div > .xpd,
+#rso .std {
   position: relative;
   margin-left: calc(50% - 300px);
 }
@@ -89,7 +92,8 @@ div.QV1uNc.qlMaed {
 #rso .g.g-blk,
 #rso .vk_c,
 #rso > .g,
-div.QV1uNc.qlMaed {
+#rso > div > .xpd,
+#rso .std {
   margin-top: 5px;
   margin-bottom: 10px;
   padding: 20px;
@@ -108,7 +112,8 @@ div.QV1uNc.qlMaed {
 #rso .g.g-blk:hover,
 #rso .vk_c:hover,
 #rso > .g:hover,
-div.QV1uNc.qlMaed:hover {
+#rso > div > .xpd:hover,
+#rso .std:hover {
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   border-color: rgba(223, 225, 229, 0)
 }
@@ -128,9 +133,11 @@ div.QV1uNc.qlMaed:hover {
   width: 265px;
 }
 
-/* 谷歌学术复合条目临时解决用打包混淆后的类名：div.QV1uNc.qlMaed */
-div.QV1uNc.qlMaed {
-  margin-bottom: 27px;
+/* 谷歌学术复合条目使用表格临时解决 */
+#rso .std {
+  box-sizing: content-box;
+  margin-top: -3px;
+  margin-bottom: -3px;
 }
 
 /* 去掉复合条目的内部边框 */
@@ -164,9 +171,9 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
   display: none;
 }
 
-/* -------------- extrares --------------- */
+/* -------------- botstuff --------------- */
 /* 与搜索结果同宽 */
-#extrares {
+#botstuff {
   padding: 0;
   margin: 0 !important;
   width: 1280px !important;
@@ -174,7 +181,7 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
 }
 
 /* 分列 */
-#extrares {
+#botstuff {
   column-count: 2;
   column-gap: 0;
 }
@@ -182,6 +189,7 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
 /* 与搜索结果以一样的条目样式 */
 #bres .g,
 #bres .mnr-c,
+#botstuff > div > .med,
 #brs {
   margin-left: calc(50% - 300px);
   margin-bottom: 0;
@@ -193,6 +201,7 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
 
 /* 相关搜索：样式 */
 #bres .mnr-c,
+#botstuff > div > .med,
 #brs {
   width: 558px;
   margin-top: 20px;
@@ -249,7 +258,8 @@ g-section-with-header g-scrolling-carousel g-inner-card a div[jscontroller] div[
 #rso .g.obcontainer::before,
 #rso .g.g-blk::before,
 #rso > .g::before,
-div.QV1uNc.qlMaed::before {
+#rso > div > .xpd::before,
+#rso .std::before {
   counter-increment: gnumber;
   content: counter(gnumber);
   position: absolute;
